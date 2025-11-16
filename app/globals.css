@@ -70,9 +70,16 @@
   * {
     @apply border-border !scroll-smooth;
   }
+
+  /* Prevent fixed navbar from covering anchored sections */
+  html {
+    scroll-padding-top: 6rem;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
+
   button {
     @apply active:outline-none;
   }

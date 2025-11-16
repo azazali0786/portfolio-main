@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   motion,
   AnimatePresence,
@@ -21,6 +21,7 @@ export const FloatingNav = ({
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
+  const navRef = useRef<HTMLDivElement | null>(null);
 
   // set true for the initial state so that nav bar is visible in the hero section
   const [visible, setVisible] = useState(true);
@@ -57,7 +58,8 @@ export const FloatingNav = ({
         transition={{
           duration: 0.2,
         }}
-        className={cn(
+  ref={navRef}
+  className={cn(
           // change rounded-full to rounded-lg
           // remove dark:border-white/[0.2] dark:bg-black bg-white border-transparent
           // change  pr-2 pl-8 py-2 to px-10 py-5
@@ -71,20 +73,60 @@ export const FloatingNav = ({
           border: "1px solid rgba(255, 255, 255, 0.125)",
         }}
       >
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            className={cn(
-              "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            {/* add !cursor-pointer */}
-            {/* remove hidden sm:block for the mobile responsive */}
-            <span className=" text-sm !cursor-pointer">{navItem.name}</span>
-          </Link>
-        ))}
+        {navItems.map((navItem: any, idx: number) => {
+          const isHash = typeof navItem.link === "string" && navItem.link.startsWith("#");
+
+          if (isHash) {
+            // For in-page anchors, use a smooth-scrolling click handler to ensure
+            // the browser scrolls to the element even when Next's Link may not.
+            return (
+              <a
+                key={`link=${idx}`}
+                href={navItem.link}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const id = navItem.link.replace(/^#/, "");
+                      const el = document.getElementById(id);
+                      if (el) {
+                        // compute offset to account for fixed navbar height so the
+                        // section isn't obscured after scrolling
+                        const navHeight = navRef.current?.offsetHeight ?? 80;
+                        const rect = el.getBoundingClientRect();
+                        const target = window.scrollY + rect.top - navHeight - 8; // extra 8px spacing
+                        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                        const final = Math.min(Math.max(0, target), maxScroll);
+                        window.scrollTo({ top: final, behavior: "smooth" });
+                        // update the hash without jumping
+                        history.replaceState(undefined, "", `#${id}`);
+                      } else {
+                        // fallback: navigate to the hash so the browser can try
+                        window.location.hash = navItem.link;
+                      }
+                    }}
+                className={cn(
+                  "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+                )}
+              >
+                <span className="block sm:hidden">{navItem.icon}</span>
+                <span className=" text-sm !cursor-pointer">{navItem.name}</span>
+              </a>
+            );
+          }
+
+          // For normal routes, use Next.js Link
+          return (
+            <Link
+              key={`link=${idx}`}
+              href={navItem.link}
+              className={cn(
+                "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+              )}
+            >
+              <span className="block sm:hidden">{navItem.icon}</span>
+              <span className=" text-sm !cursor-pointer">{navItem.name}</span>
+            </Link>
+          );
+        })}
         {/* remove this login btn */}
         {/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
           <span>Login</span>
