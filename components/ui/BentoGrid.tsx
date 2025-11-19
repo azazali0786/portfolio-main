@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 // Also install this npm i --save-dev @types/react-lottie
 import Lottie from "react-lottie";
@@ -52,8 +53,8 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+  const leftLists = ["Flutter", "React", "Next.js", "Node.js", "express"];
+  const rightLists = ["Firebase", "PostgreSQL", "MongoDB", "AWS", "redis"];
 
   const [copied, setCopied] = useState(false);
 
@@ -67,7 +68,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
+    const text = "azazali0786@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
@@ -141,34 +142,56 @@ export const BentoGridItem = ({
 
           {/* Tech stack list div */}
           {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-              {/* tech stack lists */}
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                {leftLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                  >
-                    {item}
-                  </span>
-                ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-              </div>
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-                {rightLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
+  <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2 overflow-visible">
+
+    {/* LEFT LIST (Moves UP) */}
+    <motion.div
+  className="flex flex-col gap-3 md:gap-3 lg:gap-8"
+  animate={{ y: ["0%", "-40%", "0%"] }}
+  transition={{
+    duration: 15,
+    repeat: Infinity,
+    ease: "linear"
+  }}
+>
+  {[...leftLists, ...leftLists].map((item, i, arr) =>
+    i === arr.length - 1 ? null : (
+      <span
+        key={i}
+        className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
+        lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+      >
+        {item}
+      </span>
+    )
+  )}
+
+    </motion.div>
+
+    {/* RIGHT LIST (Moves DOWN) */}
+    <motion.div
+      className="flex flex-col gap-3 md:gap-3 lg:gap-8"
+      animate={{ y: ["0%", "40%", "0%"] }}
+      transition={{
+        duration: 15,
+        repeat: Infinity,
+        ease: "linear"
+      }}
+    >
+      {[...rightLists, ...rightLists].map((item, i) => (
+        <span
+          key={i}
+          className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
+          lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+        >
+          {item}
+        </span>
+      ))}
+    </motion.div>
+
+  </div>
+)}
+
           {id === 6 && (
             <div className="mt-5 relative">
               {/* button border magic from tailwind css buttons  */}

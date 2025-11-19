@@ -1,3 +1,5 @@
+import { url } from "inspector";
+
 export const navItems = [
   { name: "Home", link: "#home" },
   { name: "About", link: "#about" },
@@ -95,46 +97,36 @@ export const projects = [
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
     link: "/ui.aiimg.com",
   },
-  {
-    id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.apple.com",
-  },
 ];
 
-export const testimonials = [
+export const testimonials = [  
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Working with Azaz was a great experience. He delivered our AliveMilk multivendor system—including the user app, delivery app, admin panel, and seller panel—with professionalism and strong technical skill. His clear communication and dedication made the entire development process smooth. I highly recommend him.",
+    name: "Mahraj Ali",
+    title: "Director of DMAK Agriculture Private Limited",
+    img: "/maharaj.jpg",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Azaz delivered a complete custom solution for our tyre management system, including the dealers app, admin app, web admin panel, and company portfolio website. His work was efficient, well-structured, and aligned perfectly with our business needs. I appreciate his dedication and smooth communication throughout the project.",
+    name: "Mo. Rizwan",
+    title: "Director of Romsons Enterprises",
+    img: "/rizwan.jpg",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Working with Azaz was a great experience. He delivered our AliveMilk multivendor system—including the user app, delivery app, admin panel, and seller panel—with professionalism and strong technical skill. His clear communication and dedication made the entire development process smooth. I highly recommend him.",
+    name: "Mahraj Ali",
+    title: "Director of DMAK Agriculture Private Limited",
+    img: "/maharaj.jpg",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Azaz delivered a complete custom solution for our tyre management system, including the dealers app, admin app, web admin panel, and company portfolio website. His work was efficient, well-structured, and aligned perfectly with our business needs. I appreciate his dedication and smooth communication throughout the project.",
+    name: "Mo. Rizwan",
+    title: "Director of Romsons Enterprises",
+    img: "/rizwan.jpg",
   },
 ];
 
@@ -169,34 +161,40 @@ export const companies = [
     img: "/dock.svg",
     nameImg: "/dockerName.svg",
   },
+  {
+    id: 6,
+    name: "firebase.",
+    img: "/firebase.svg",
+    nameImg: "/firebaseName.png",
+  },
 ];
 
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    title: "Mobile App Developer",
+    desc: "Experienced in building high-performance Android and iOS applications using Flutter with clean architecture and scalable UI.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-    className: "md:col-span-2", // change to md:col-span-2
+    title: "Web Developer",
+    desc: "Develop responsive and modern web applications using React, Next.js, and Flutter Web with optimized performance.",
+    className: "md:col-span-2",
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-    className: "md:col-span-2", // change to md:col-span-2
+    title: "Custom Software Developer",
+    desc: "Build tailored digital solutions for businesses, including admin panels, dashboards, management systems, and automation tools.",
+    className: "md:col-span-2",
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    title: "Hosting & Maintenance",
+    desc: "Provide hosting setup, deployment, regular updates, and long-term maintenance to ensure apps and websites run smoothly.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
@@ -206,13 +204,16 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    url: "https://github.com/azazali0786",
   },
   {
     id: 2,
     img: "/twit.svg",
+    url: "https://x.com/AzazAli48774070",
   },
   {
     id: 3,
     img: "/link.svg",
+    url: "https://linkedin.com/in/azaz-ali-abc",
   },
 ];

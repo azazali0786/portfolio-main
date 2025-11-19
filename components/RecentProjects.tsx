@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { FaLocationArrow } from "react-icons/fa6";
 
 import { projects } from "@/data";
@@ -7,21 +8,27 @@ import { PinContainer } from "./ui/Pin";
 
 const RecentProjects = () => {
   return (
-  <div className="py-20" id="projects" style={{ scrollMarginTop: "6rem" }}>
+    <div className="20" id="projects" style={{ scrollMarginTop: "6rem" }}>
       <h1 className="heading">
         A small selection of{" "}
         <span className="text-purple">recent projects</span>
       </h1>
-      {/* <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10"> */}
+        {/* <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10"> */}
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 p-4">
-        {projects.map((item) => (
-          <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+        {projects.map((item, index) => (
+          <motion.div
             key={item.id}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.15 }}
+            whileHover={{ scale: 1.04 }}
+            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw] cursor-pointer"
           >
             <PinContainer
-              title="/ui.aceternity.com"
-              href="https://twitter.com/mannupaaji"
+              // title="/ui.aceternity.com"
+              // href="https://twitter.com/mannupaaji"
             >
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                 <div
@@ -30,10 +37,14 @@ const RecentProjects = () => {
                 >
                   <img src="/bg.png" alt="bgimg" />
                 </div>
-                <img
-                  src={item.img}
+
+                <motion.img
+                  src={item.img} 
                   alt="cover"
                   className="z-10 absolute bottom-0"
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ duration: 0.3 }}
                 />
               </div>
 
@@ -53,12 +64,12 @@ const RecentProjects = () => {
 
               <div className="flex items-center justify-between mt-7 mb-3">
                 <div className="flex items-center">
-                  {item.iconLists.map((icon, index) => (
+                  {item.iconLists.map((icon, iconIndex) => (
                     <div
-                      key={index}
+                      key={iconIndex}
                       className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                       style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
+                        transform: `translateX(-${5 * iconIndex + 2}px)`,
                       }}
                     >
                       <img src={icon} alt="icon5" className="p-2" />
@@ -74,7 +85,7 @@ const RecentProjects = () => {
                 </div>
               </div>
             </PinContainer>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
