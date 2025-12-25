@@ -1,6 +1,8 @@
 "use client";
 
-import dynamic from "next/dynamic";
+export const dynamic = "force-dynamic";
+
+import dynamicImport from "next/dynamic";
 import { navItems } from "@/data";
 
 import Hero from "@/components/Hero";
@@ -11,8 +13,11 @@ import Approach from "@/components/Approach";
 import Experience from "@/components/Experience";
 import RecentProjects from "@/components/RecentProjects";
 
-const FloatingNav = dynamic(
-  () => import("@/components/ui/FloatingNavbar").then((mod) => mod.FloatingNav),
+const FloatingNav = dynamicImport(
+  () =>
+    import("@/components/ui/FloatingNavbar").then(
+      (mod) => mod.FloatingNav
+    ),
   { ssr: false }
 );
 
