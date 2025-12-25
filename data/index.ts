@@ -73,30 +73,80 @@ export const gridItems = [
 ];
 
 export const projects = [
-  {
-    id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
-  },
-  {
-    id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
-  },
-  {
-    id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "/ui.aiimg.com",
-  },
+ {
+  id: 3,
+  title: "NSI Tyre – Business Landing Page",
+  des: "A modern and responsive landing page for a tyre distribution business, showcasing products, partners, services, and brand presence with a clean UI and smooth user experience.",
+  img: "/nsi_web.png",
+  iconLists: ["/re.svg", "/tail.svg", "/firebase.svg", "/flutter.svg", "/bloc.svg"],
+  link: "http://nsityre.com/",
+},
+{
+  id: 1,
+  title: "Alive Shop – E-Commerce Frontend UI",
+  des: "A frontend-only e-commerce shop interface with product listings, category filters, search, sorting, and cart UI. Designed to demonstrate clean layouts, reusable components, and responsive design.",
+  img: "/alive-shope.png",
+  iconLists: ["/re.svg", "/tail.svg"],
+  link: "https://alive-shop-azaz.netlify.app/",
+},
+{
+  id: 2,
+  title: "My Finance – Expense Tracker Dashboard",
+  des: "A finance management dashboard UI to track income, expenses, balances, and transactions. Features visual charts, summaries, and a clean modern layout focused on usability and clarity.",
+  img: "/expense-tracker.png",
+  iconLists: ["/re.svg", "/tail.svg", "/node.svg", "/postgressql.svg"],
+  link: "https://azaz-ali-expense-tracker-4uej.vercel.app/",
+},
+{
+  id: 4,
+  title: "NSI Tyre – Admin Dashboard Panel",
+  des: "An admin dashboard for managing tyre dealers, products, entries, and reports. Includes quick actions, recent activity tracking, analytics cards, and Excel export support.",
+  img: "/nsi_dash.png",
+  iconLists: ["/flutter.svg", "/firebase.svg", "/dart.svg", "/bloc.svg"],
+  link: "https://nsityre.com/admin/#/admin",
+},
+{
+  id: 5,
+  title: "Alive Milk – Dairy Business Landing Page",
+  des: "A clean and engaging landing page for a dairy brand, highlighting fresh milk delivery, product quality, customer trust metrics, and clear call-to-action sections.",
+  img: "/alive_web.png",
+  iconLists: ["/flutter.svg", "/dart.svg", "/firebase.svg",  "/bloc.svg"],
+  link: "https://www.alivemilk.com/",
+}
+];
+export const projects_app = [
+ {
+  id: 1,
+  title: "Alive Service – On-Demand Worker Hiring App",
+  des: "A location-based service platform that connects users with nearby skilled workers like electricians, plumbers, welders, and mechanics. Includes worker profiles, ratings, direct calling, and category-wise search for quick hiring.",
+  img: "/alive_service.png",
+  iconLists: ["/flutter.svg", "/dart.svg", "/firebase.svg", "/riverpod.svg"],
+  link: "https://github.com/azazali0786",
+},
+{
+  id: 2,
+  title: "Alive Manager – Milk Delivery & Billing System",
+  des: "A complete milk delivery management app for vendors to track customers, daily deliveries, pending payments, bottle counts, and generate invoices. Features dashboard analytics, backup & restore, and automated billing workflows.",
+  img: "/alive_manager.png",
+  iconLists: ["/flutter.svg", "/dart.svg", "/bloc.svg"],
+  link: "https://github.com/azazali0786",
+},
+{
+  id: 3,
+  title: "Delivery Management System – Admin & Delivery Boy App",
+  des: "An end-to-end delivery management solution with separate admin and delivery boy apps. Includes customer management, daily collections, expense tracking, delivery status, stock assignment, and real-time dashboard insights.",
+  img: "/delivery_management.png",
+  iconLists: ["/flutter.svg", "/dart.svg", "/node.svg", "/bloc.svg", "/postgressql.svg"],
+  link: "https://github.com/azazali0786",
+},
+{
+  id: 4,
+  title: "NSI Tyre Management – Inventory & Dealer Management App",
+  des: "A business management app for tyre distributors to manage products, dealers, entries, approvals, and invoices. Supports role-based access for admin and dealers, product tracking, and Excel report downloads.",
+  img: "/nsi_app.png",
+  iconLists: ["/flutter.svg", "/dart.svg", "/firebase.svg", "/bloc.svg"],
+  link: "https://github.com/azazali0786",
+}
 ];
 
 export const testimonials = [  

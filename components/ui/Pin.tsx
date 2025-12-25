@@ -58,11 +58,8 @@ export const PinContainer: React.FC<PinContainerProps> = ({
 
   return (
     <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
       style={{ perspective: 1000 }}
-      className={cn("relative group/pin cursor-pointer", containerClassName)}
+      className={cn("relative group/pin", containerClassName)}
     >
       <motion.div
         // style must be React.CSSProperties — we used that type for state
@@ -72,11 +69,18 @@ export const PinContainer: React.FC<PinContainerProps> = ({
           className
         )}
       >
-        {children}
+        <div
+          ref={cardRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          className="w-full h-full"
+        >
+          {children}
+        </div>
       </motion.div>
 
       <PinPerspective title={title} href={href} />
-    </div>
+    </div>                                      
   );
 };
 
