@@ -266,4 +266,14 @@ export const socialMedia = [
     img: "/link.svg",
     url: "https://linkedin.com/in/azaz-ali-abc",
   },
+  {
+    id: 4,
+    img: "/wha.svg",
+    url: "https://wa.me/918800646224?text=Hello%20Azaz%2C%20I%20visited%20your%20portfolio",
+  },
+  {
+    id: 4,
+    img: "/insta.svg",
+    url: "https://www.instagram.com/azazali786_/",
+  },
 ];
