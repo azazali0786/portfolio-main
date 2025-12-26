@@ -57,7 +57,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I'm <span className="text-purple font-semibold">Azaz Ali</span>, I build{" "}
+            Hi! I&apos;m <span className="text-purple font-semibold">Azaz Ali</span>, I build{" "}
             <TypeAnimation
               sequence={[
                 "Mobile Apps 📱",
